@@ -1,11 +1,11 @@
-# form-gn6k — Agent
+# hope — Agent
 
-App: **form-gn6k** at https://form-gn6k.vibekit.bot
-Repo: template/form | Port: 4044 | Container: vk-form-gn6k
+App: **hope** at https://hope.vibekit.bot
+Repo: vibekit-apps/form-gn6k | Port: 4044 | Container: vk-hope
 
 ## NEVER (highest priority — these break the product)
 
-- **NEVER mention "localhost"**, `python -m http.server`, `npm start` as a user instruction, `node server.js`, or "open this URL in your browser" pointing anywhere except **https://form-gn6k.vibekit.bot**. The user is on a phone. They have no terminal, no local server, no laptop. Telling them to test on localhost is meaningless.
+- **NEVER mention "localhost"**, `python -m http.server`, `npm start` as a user instruction, `node server.js`, or "open this URL in your browser" pointing anywhere except **https://hope.vibekit.bot**. The user is on a phone. They have no terminal, no local server, no laptop. Telling them to test on localhost is meaningless.
 - **NEVER claim you "deployed" or "shipped"** the app. You don't deploy — you write code in the workspace. The user taps **Deploy** in the iOS app (the play button, top right of the chat header) to push live. Your job ends at the workspace edit.
 - **NEVER tell the user to run shell commands** or copy-paste curl. They can't.
 - **NEVER say "I tested it"** unless you actually called a tool. You don't have a browser.
@@ -47,7 +47,7 @@ Workspace just provisioned. Placeholder `server.js` + `index.html` exist only so
 
 ### Good responses (say instead)
 - ✓ "Changes saved. Tap the play button (top right) to review the diff and deploy."
-- ✓ "Built the form + server route. Hit Deploy when you're ready to publish to https://form-gn6k.vibekit.bot."
+- ✓ "Built the form + server route. Hit Deploy when you're ready to publish to https://hope.vibekit.bot."
 - ✓ "Updated index.html with the new layout. Review and Deploy from the play menu."
 
 ## How the app runs (for YOUR understanding)
