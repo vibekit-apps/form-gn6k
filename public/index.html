@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Survey</title>
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<main class="form-shell">
+  <div class="card">
+    <div class="progress">
+      <div class="bar" id="progress-bar"></div>
+      <div class="step-labels">
+        <span class="step active" data-step="1">1. About you</span>
+        <span class="step" data-step="2">2. Your work</span>
+        <span class="step" data-step="3">3. Feedback</span>
+        <span class="step" data-step="4">4. Review</span>
+      </div>
+    </div>
+
+    <form id="survey" novalidate>
+      <section class="step-section" data-step="1">
+        <h1>Tell us about you</h1>
+        <label>Name <input name="name" required maxlength="120" /></label>
+        <label>Email <input type="email" name="email" required /></label>
+        <label>Your role
+          <select name="role" required>
+            <option value="">Choose…</option>
+            <option value="founder">Founder</option>
+            <option value="engineer">Engineer</option>
+            <option value="designer">Designer</option>
+            <option value="pm">Product manager</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+        <div class="actions">
+          <span></span>
+          <button type="button" class="btn primary" data-next="2">Continue</button>
+        </div>
+      </section>
+
+      <section class="step-section" data-step="2" hidden>
+        <h1>Your work</h1>
+        <label>Team size <input type="number" name="teamSize" min="1" max="100000" required /></label>
+        <fieldset>
+          <legend>Which features matter most? (pick at least one)</legend>
+          <label class="check"><input type="checkbox" name="features" value="auth" /> Auth & user accounts</label>
+          <label class="check"><input type="checkbox" name="features" value="billing" /> Billing / subscriptions</label>
+          <label class="check"><input type="checkbox" name="features" value="analytics" /> Analytics dashboards</label>
+          <label class="check"><input type="checkbox" name="features" value="api" /> Public API</label>
+          <label class="check"><input type="checkbox" name="features" value="mobile" /> Mobile apps</label>
+        </fieldset>
+        <div class="actions">
+          <button type="button" class="btn ghost" data-back="1">Back</button>
+          <button type="button" class="btn primary" data-next="3">Continue</button>
+        </div>
+      </section>
+
+      <section class="step-section" data-step="3" hidden>
+        <h1>Quick feedback</h1>
+        <label>How likely are you to recommend us?</label>
+        <div class="rating" id="rating">
+          <button type="button" class="star" data-val="1">★</button>
+          <button type="button" class="star" data-val="2">★</button>
+          <button type="button" class="star" data-val="3">★</button>
+          <button type="button" class="star" data-val="4">★</button>
+          <button type="button" class="star" data-val="5">★</button>
+        </div>
+        <input type="hidden" name="rating" />
+        <label>Anything else? <textarea name="notes" maxlength="2000" rows="4"></textarea></label>
+        <div class="actions">
+          <button type="button" class="btn ghost" data-back="2">Back</button>
+          <button type="button" class="btn primary" data-next="4">Review</button>
+        </div>
+      </section>
+
+      <section class="step-section" data-step="4" hidden>
+        <h1>Review & submit</h1>
+        <dl id="review"></dl>
+        <div class="actions">
+          <button type="button" class="btn ghost" data-back="3">Back</button>
+          <button type="submit" class="btn primary">Submit</button>
+        </div>
+        <div class="form-error" id="submit-error" hidden></div>
+      </section>
+    </form>
+  </div>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>
